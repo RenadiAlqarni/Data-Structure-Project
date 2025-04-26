@@ -4,7 +4,6 @@ public class BstAlbum {
     private InvIndexPhotoManager invmanager;
     private int NbComps;
 
-    // Constructor
     public BstAlbum(String name, String condition, InvIndexPhotoManager manager)
     {
         this.name = name;
@@ -12,26 +11,22 @@ public class BstAlbum {
         this.invmanager = manager;
         NbComps =0 ;
     }
-    
-    // Return the name of the album
+
     public String getName()
     {
         return name;
     }
-    
-    // Return the condition associated with the album
+
     public String getCondition()
     {
         return condition;
     }
 
-    // Return the manager
     public InvIndexPhotoManager getManager()
     {
         return invmanager;
     }
-    
-    // Return all photos that satisfy the album condition
+
     public LinkedList<Photo> getPhotos(){
         BST<LinkedList<Photo>> photosBST = invmanager.getPhotos(); 
         LinkedList<Photo> AllPhotos = new LinkedList<Photo>();
@@ -68,12 +63,7 @@ public class BstAlbum {
         return AllPhotos;
     }
    
-    /**
-     * يُعيد قائمة الصور المشتركة بين list1 و list2
-     * عبر التكرار على list1 أولاً ثم البحث في list2.
-     */
- 
-    // Return the number of tag comparisons used to find all photos of the album
+
     public int getNbComps()
     {
         return NbComps;
