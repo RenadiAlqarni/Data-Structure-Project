@@ -12,7 +12,6 @@ public class Album {
         NbComps =0 ;
     }
 
-    // Return the name of the album
     public String getName()
     {
         return name;
