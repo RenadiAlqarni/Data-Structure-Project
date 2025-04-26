@@ -16,12 +16,12 @@ public class Album {
     {
         return name;
     }
+  
     public String getCondition()
     {
         return condition;
     }
 
-    // Return the manager
     public PhotoManager getManager()
     {
         return manager;
@@ -61,7 +61,6 @@ public class Album {
         return Rphotos;
     }
     
-
     public int getNbComps() {
         return NbComps;
     }
