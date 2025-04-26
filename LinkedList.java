@@ -72,9 +72,6 @@ public class LinkedList<T> {
             }
         }
     
-        /**
-         * Returns the number of nodes currently in the list.
-         */
         public int getSize() {
             int count = 0;
             Node<T> tmp = head;
