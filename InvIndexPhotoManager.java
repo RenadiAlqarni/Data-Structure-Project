@@ -5,9 +5,8 @@ public class InvIndexPhotoManager {
           this.invertedIndex = new BST<>();
       }
 
-      // Adds a photo under the empty‐tag key and under each of its real tags
       public void addPhoto(Photo p) {
-          // Always index under the "empty" tag
+  
           indexTag("", p);
 
           LinkedList<String> tags = p.getTags();
@@ -22,12 +21,10 @@ public class InvIndexPhotoManager {
           }
       }
 
-      // Helper: insert p into the list for tag, creating that list if needed
       private void indexTag(String tag, Photo p) {
           if (invertedIndex.findkey(tag)) {
               LinkedList<Photo> list = invertedIndex.retrieve();
               list.insert(p);
-              // no need to call update() since list is mutated in place
           } else {
               LinkedList<Photo> list = new LinkedList<>();
               list.insert(p);
@@ -35,9 +32,7 @@ public class InvIndexPhotoManager {
           }
       }
 
-      // Deletes all occurrences of a photo path from every tag list
       public void deletePhoto(String path) {
-          // gather all keys first (so we don't modify the BST while iterating)
           String allKeys = invertedIndex.inOrder();
           if (allKeys.isEmpty()) return;
 
@@ -46,7 +41,6 @@ public class InvIndexPhotoManager {
               if (!invertedIndex.findkey(tag)) continue;
 
               LinkedList<Photo> list = invertedIndex.retrieve();
-              // traverse and remove matching photo
               if (!list.empty()) {
                   list.findFirst();
                   while (true) {
@@ -60,7 +54,6 @@ public class InvIndexPhotoManager {
                   }
               }
 
-              // if list is now empty, drop the key; otherwise update its data
               if (list.getSize() == 0) {
                   invertedIndex.removeKey(tag);
               } else {
@@ -69,8 +62,6 @@ public class InvIndexPhotoManager {
           }
       }
     
-
-      // Expose the entire inverted index
       public BST<LinkedList<Photo>> getPhotos() {
           return invertedIndex;
       }
