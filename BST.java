@@ -3,8 +3,7 @@ public class BST<T> {
             public String key;
             public T data;
             public BSTNode<T> left, right;
-
-            /** Creates a new instance of BSTNode */
+                
             public BSTNode(String k, T val) {
                     key = k;
                     data = val;
@@ -22,7 +21,6 @@ public class BST<T> {
         BSTNode<T> root, current;
         String AllKeys;
         
-        /** Creates a new instance of BST */
         public BST() {
                 root = current = null;
         }
