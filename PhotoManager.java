@@ -2,13 +2,11 @@ public class PhotoManager {
     
     LinkedList<Photo> photos;
 
-    // Constructor
    public PhotoManager()
    {
            photos = new LinkedList<Photo>();
    }
-   
-   // Add a photo
+
    public void addPhoto(Photo p)
    {
     if (photos.empty()) 
@@ -30,13 +28,9 @@ public class PhotoManager {
               photos.insert(p);
             }
    }
-   
-   // Delete a photo
+
    public void deletePhoto(String path)
    {
-      // if (! this.IsPhototAvailable(path, photos))
-       //    return;
-   
        if ( photos.empty())
        return;
        else
@@ -64,7 +58,6 @@ public class PhotoManager {
 }
    }
 
-   // Return all managed photos
    public LinkedList<Photo>  getPhotos()
    {
        return photos;
