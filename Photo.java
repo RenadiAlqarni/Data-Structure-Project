@@ -3,7 +3,7 @@ public class Photo {
     private String path;
     LinkedList<String> TotalTags = new LinkedList<>();
    
-  // Constructor
+
    public Photo(String path, LinkedList<String> tags)
    {
        this.path = path;
