@@ -11,12 +11,12 @@ public class Photo {
        if (! tags.empty())
        {   
           tags.findFirst();
-          while ( !tags.last())//all except the last 
+          while ( !tags.last())
           {
             TotalTags.insert(tags.retrieve());
               tags.findNext();
           }
-          TotalTags.insert(tags.retrieve());//the last one
+          TotalTags.insert(tags.retrieve());
        }
   }
    
@@ -26,7 +26,6 @@ public class Photo {
           return path;
   }
   
-  // Return all tags associated with the photo
   public LinkedList<String> getTags()
   {
       LinkedList<String> tagsNew = new LinkedList<String>();
@@ -45,7 +44,7 @@ public class Photo {
   }
 
 @Override
-public String toString() { //اقدر اغيرها
+public String toString() { 
   
   String str = "Photo{" + "path=" + path + ", TotalTags=" ;
   
