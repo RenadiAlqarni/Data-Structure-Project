@@ -4,7 +4,6 @@ public class Album {
     private PhotoManager manager;
     private int NbComps;
 
-    // Constructor
     public Album(String name, String condition, PhotoManager manager)
     {
         this.name = name;
@@ -18,8 +17,6 @@ public class Album {
     {
         return name;
     }
-    
-    // Return the condition associated with the album
     public String getCondition()
     {
         return condition;
@@ -65,13 +62,11 @@ public class Album {
         return Rphotos;
     }
     
-    
-    // ترجع عدد المقارنات التي تمت
+
     public int getNbComps() {
         return NbComps;
     }
     
-    // تتحقق أن كل الكلمات في terms موجودة في القائمة AllTags
     private boolean allAvilable(LinkedList<String> AllTags, String[] terms) {
         if (AllTags.empty()) {
             return false;
